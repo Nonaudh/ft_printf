@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include "libft.h"
+#include "ft_printf.h"
 
 int	print_char(int c)
 {
@@ -14,10 +11,75 @@ int	print_str(char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 		i++;
 	write (1, str, i);
 	return (i);
+}
+
+int	ft_num_lenght(int n)
+{
+	long nb;
+	int len;
+
+	nb = (long)n;
+	len = 0;
+
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+	{
+		nb = -nb;
+		len++;
+	}
+	while (nb > 0)
+	{
+		nb = nb / 10;
+		len++;
+	}
+	return (len);
+}
+
+int	ft_hexa_num_lenght(int n)
+{
+	long nb;
+	int len;
+
+	nb = (long)n;
+	len = 0;
+
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+		nb = 4294967296 + nb;
+	while (nb > 0)
+	{
+		nb = nb / 16;
+		len++;
+	}
+	return (len);
+}
+
+int	ft_unsigned_num_lenght(int n)
+{
+	long nb;
+	int len;
+
+	nb = (long)n;
+	len = 0;
+
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+		nb = 4294967296 + nb;
+	while (nb > 0)
+	{
+		nb = nb / 10;
+		len++;
+	}
+	return (len);
 }
 
 int	print_number(int n)
@@ -36,7 +98,7 @@ int	print_number(int n)
 		nb = nb % 10;
 	}
 	print_char(nb + 48);
-	return (1);
+	return (ft_num_lenght(n));
 }
 
 int	print_unsigned(int n)
@@ -52,7 +114,7 @@ int	print_unsigned(int n)
 		nb = nb % 10;
 	}
 	print_char(nb + 48);
-	return (1);
+	return (ft_unsigned_num_lenght(n));
 }
 
 int	print_HEXAnumber(int n)
@@ -71,7 +133,7 @@ int	print_HEXAnumber(int n)
 		print_char(nb + 48);
 	if (nb > 9)
 		print_char(nb + 55);
-	return (1);
+	return (ft_hexa_num_lenght(n));
 }
 
 int	print_hexanumber(int n)
@@ -90,10 +152,8 @@ int	print_hexanumber(int n)
 		print_char(nb + 48);
 	if (nb > 9)
 		print_char(nb + 87);
-	return (1);
+	return (ft_hexa_num_lenght(n));
 }
-
-
 
 int	print_percent(void)
 {
@@ -143,7 +203,6 @@ int	ft_printf(const char *str, ...)
 		{
 			i++;
 			print += set_format(args, str[i]);
-			i++;
 		}
 		else
 		{
@@ -156,14 +215,14 @@ int	ft_printf(const char *str, ...)
 	return (print);
 }
 
-#include <limits.h>
-
+/*
 int main ()
 {
-	int *test;
-	int nb = 1999;
-	test = &nb;
+	int test = -100;
 
-	printf("%p\n", (void *)test);
-	ft_printf("%x", (void *)test);
+	printf("%x\n", test);
+	ft_printf("%x\n", test);
+	printf("%d", ft_hexa_num_lenght(test));
+
 }
+*/
