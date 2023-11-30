@@ -136,7 +136,7 @@ int	print_HEXAnumber(int n)
 	return (ft_hexa_num_lenght(n));
 }
 
-int	print_hexanumber(int n)
+int	print_hexanumber(long int n)
 {
 	long	nb;
 	nb = (long)n;
@@ -215,14 +215,15 @@ int	ft_printf(const char *str, ...)
 	return (print);
 }
 
-/*
+
 int main ()
 {
 	int test = -100;
+	int *p = &test;
 
 	printf("%x\n", test);
 	ft_printf("%x\n", test);
-	printf("%d", ft_hexa_num_lenght(test));
+	//printf("%d", ft_hexa_num_lenght(test));
 
 }
-*/
+
