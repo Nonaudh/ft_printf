@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 NAME = libftprintf.a
 
-SOURCES = ft_printf.c
+SOURCES = ft_printf.c ft_lenght.c
 
 all : $(NAME)
 
