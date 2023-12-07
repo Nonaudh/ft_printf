@@ -29,11 +29,8 @@ int	ft_print_pointer_hexadecimal(unsigned long n);
 int	ft_print_pointer(unsigned long n);
 int	ft_print_integer(long n);
 int	ft_print_unsigned_decimal(unsigned int n);
-int	ft_print_hexadecimal_uppercase(unsigned int n);
-int	ft_print_hexadecimal_lowercase(unsigned int n);
-int	ft_print_percent(void);
+int	ft_print_hexadecimal(unsigned int n, char format);
 int	set_format(va_list args, char c);
 int	ft_printf(const char *str, ...);
-
 
 #endif

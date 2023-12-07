@@ -19,13 +19,13 @@ int	set_format(va_list args, char format)
 		return (ft_print_unsigned_decimal(va_arg(args, int)));
 
 	if (format == 'X')
-		return (ft_print_hexadecimal_uppercase(va_arg(args, int)));
+		return (ft_print_hexadecimal(va_arg(args, int), format));
 
 	if (format == 'x')
-		return (ft_print_hexadecimal_lowercase(va_arg(args, int)));
+		return (ft_print_hexadecimal(va_arg(args, int), format));
 
 	if (format == '%')
-		return (ft_print_percent());
+		return (ft_print_character('%'));
 	return (0);
 }
 
@@ -59,13 +59,12 @@ int	ft_printf(const char *str, ...)
 /*
 int main ()
 {
-	int n = 10;
-	int *test = NULL;
+	int test = 4269;
 
 	int number;
 
-	printf("%p\n", test);
-	number = ft_printf("%p\n", test);
+	printf("%X\n", test);
+	number = ft_printf("%X\n", test);
 	printf("num; %d", number);
 }
 */
