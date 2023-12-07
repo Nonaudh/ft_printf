@@ -16,8 +16,8 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
-#include <stdio.h>//////
-#include <limits.h>/////
+# include <stdio.h>//////
+# include <limits.h>/////
 
 int	ft_printf(const char *str, ...);
 int	ft_decimal_lenght(long n);

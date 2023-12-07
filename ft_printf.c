@@ -26,7 +26,6 @@ int	set_format(va_list args, char format)
 
 	if (format == '%')
 		return (ft_print_percent());
-
 	return (0);
 }
 
@@ -57,11 +56,11 @@ int	ft_printf(const char *str, ...)
 	return (printed_characters);
 }
 
-
+/*
 int main ()
 {
 	int n = 10;
-	int *test = &n;
+	int *test = NULL;
 
 	int number;
 
@@ -69,3 +68,4 @@ int main ()
 	number = ft_printf("%p\n", test);
 	printf("num; %d", number);
 }
+*/

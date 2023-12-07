@@ -16,12 +16,12 @@ CFLAGS = -Wall -Werror -Wextra
 
 NAME = libftprintf.a
 
-SOURCES = ft_printf.c ft_lenght.c
+SOURCES = ft_printf.c ft_lenght.c ft_print_character.c \
+ft_print_decimal.c ft_print_hexadecimal.c
 
 all : $(NAME)
 
 OBJECTS = $(SOURCES:.c=.o)
-
 
 $(NAME) : $(NAME) $(OBJECTS)
 	ar -rcs $(NAME) $(OBJECTS)

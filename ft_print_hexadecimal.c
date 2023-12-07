@@ -20,7 +20,7 @@ int	ft_print_pointer_hexadecimal(unsigned long n)
 int	ft_print_pointer(unsigned long n)
 {
 	if (!n)
-		return (0);
+		return (ft_print_string("(nil)"));
 	write(1, "0x", 2);
 	return (ft_print_pointer_hexadecimal(n));
 }
