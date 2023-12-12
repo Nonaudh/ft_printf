@@ -22,7 +22,6 @@
 int	ft_printf(const char *str, ...);
 int	ft_decimal_lenght(long n);
 int	ft_hexadecimal_lenght(unsigned long n);
-int	ft_unsigned_num_lenght(unsigned long n);
 int	ft_print_character(int c);
 int	ft_print_string(char *str);
 int	ft_print_pointer_hexadecimal(unsigned long n);

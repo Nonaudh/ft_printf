@@ -60,7 +60,6 @@ int	ft_printf(const char *str, ...)
 int main ()
 {
 	int test = 4269;
-
 	int number;
 
 	printf("%X\n", test);
