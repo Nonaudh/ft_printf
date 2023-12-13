@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_decimal.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahuge <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/13 11:06:51 by ahuge             #+#    #+#             */
+/*   Updated: 2023/12/13 11:06:53 by ahuge            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_print_unsigned_decimal(unsigned int n)
 {
-	int nb_lenght;
+	int	nb_lenght;
 
 	nb_lenght = ft_decimal_lenght(n);
 	if (n >= 10)
@@ -16,7 +28,7 @@ int	ft_print_unsigned_decimal(unsigned int n)
 
 int	ft_print_integer(long n)
 {
-	int nb_lenght;
+	int	nb_lenght;
 
 	nb_lenght = ft_decimal_lenght(n);
 	if (n < 0)
@@ -35,18 +47,18 @@ int	ft_print_integer(long n)
 
 int	ft_decimal_lenght(long n)
 {
-	int lenght;
+	int	nb_lenght;
 
-	lenght = 0;
+	nb_lenght = 0;
 	if (n <= 0)
 	{
 		n = -n;
-		lenght++;
+		nb_lenght++;
 	}
 	while (n > 0)
 	{
 		n = n / 10;
-		lenght++;
+		nb_lenght++;
 	}
-	return (lenght);
+	return (nb_lenght);
 }

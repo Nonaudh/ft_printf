@@ -6,7 +6,7 @@
 #    By: ahuge <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 13:54:46 by ahuge             #+#    #+#              #
-#    Updated: 2023/11/14 17:47:58 by ahuge            ###   ########.fr        #
+#    Updated: 2023/12/13 12:20:59 by ahuge            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,15 +19,18 @@ NAME = libftprintf.a
 SOURCES = ft_printf.c ft_print_character.c \
 ft_print_decimal.c ft_print_hexadecimal.c
 
-all : $(NAME)
-
 OBJECTS = $(SOURCES:.c=.o)
 
-$(NAME) : $(NAME) $(OBJECTS)
+all : $(NAME)
+
+%.o: %.c
+	$(CC) -c $(CFLAGS) $?
+
+$(NAME) : $(OBJECTS)
 	ar -rcs $(NAME) $(OBJECTS)
 
 clean :
-	rm -f $(OBJECTS) $(OBJECTS_BONUS)
+	rm -f $(OBJECTS)
 
 fclean : clean
 	rm -f $(NAME)

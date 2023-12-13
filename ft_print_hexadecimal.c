@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_hexadecimal.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahuge <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/13 11:08:21 by ahuge             #+#    #+#             */
+/*   Updated: 2023/12/13 11:08:24 by ahuge            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_print_pointer(unsigned long n)
@@ -10,7 +22,7 @@ int	ft_print_pointer(unsigned long n)
 
 int	ft_print_pointer_hexadecimal(unsigned long n)
 {
-	int nb_lenght;
+	int	nb_lenght;
 
 	nb_lenght = ft_hexadecimal_lenght(n) + 2;
 	if (n >= 16)
@@ -27,7 +39,7 @@ int	ft_print_pointer_hexadecimal(unsigned long n)
 
 int	ft_print_hexadecimal(unsigned int n, char format)
 {
-	int nb_lenght;
+	int	nb_lenght;
 
 	nb_lenght = ft_hexadecimal_lenght(n);
 	if (n >= 16)
@@ -49,7 +61,7 @@ int	ft_print_hexadecimal(unsigned int n, char format)
 
 int	ft_hexadecimal_lenght(unsigned long n)
 {
-	int lenght;
+	int	lenght;
 
 	lenght = 0;
 	if (n == 0)
