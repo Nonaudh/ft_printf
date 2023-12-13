@@ -30,18 +30,17 @@ int	set_format(va_list args, char format)
 		return (ft_print_hexadecimal(va_arg(args, int), format));
 	if (format == '%')
 		return (ft_print_character('%'));
-	return (-1);
+	return (ft_printf("%%%c", format));
 }
+
 
 int	ft_printf(const char *str, ...)
 {
 	int		i;
-	int		x;
 	va_list	args;
 	int		printed_characters;
 
 	i = 0;
-	x = 0;
 	printed_characters = 0;
 	va_start(args, str);
 	while (str[i])
@@ -49,28 +48,19 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			x = set_format(args, str[i]);
-			if (x == -1)
-			{
-				printed_characters += ft_print_character('%');
-				printed_characters += ft_print_character_after_percent(str[i]);
-			}
-			else
-				printed_characters += x;
+			printed_characters += set_format(args, str[i]);
+
 		}
 		else
-		{
-			write(1, &str[i], 1);
-			printed_characters++;
-		}
-		if (str[i] != 0)
+			printed_characters += ft_print_character(str[i]);
+		if (str[i])
 			i++;
 	}
 	va_end(args);
 	return (printed_characters);
 }
 
-/*
+
 #include <stdio.h>
 #include "ft_printf.h"
 
@@ -78,12 +68,12 @@ int main ()
 {
 	int j;
 	int i;
+	char *tab = "ceci est un test";
 
-    i = printf("ceci est %k un test %");
+	j = ft_printf("%s", tab);
+	printf("\n"); 
+	/*i = printf("%s", tab);
 	printf("\n");
-    j = ft_printf("ceci est %k un test %");
-	printf("\n");
-    ft_printf("lenght de printf %d\n", i);
-    ft_printf("lenght de ft %d\n", j);
+    ft_printf("printf_len; %d\n", i);
+    ft_printf("ft_printf_len; %d\n", j);*/
 }
-*/

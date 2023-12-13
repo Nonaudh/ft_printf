@@ -18,14 +18,6 @@ int	ft_print_character(int c)
 	return (1);
 }
 
-int	ft_print_character_after_percent(int c)
-{
-	if (c == 0)
-		return (0);
-	write(1, &c, 1);
-	return (1);
-}
-
 int	ft_print_string(char *str)
 {
 	int	i;
@@ -33,8 +25,13 @@ int	ft_print_string(char *str)
 	i = 0;
 	if (!str)
 		return (ft_print_string("(null)"));
-	while (str[i])
+	/*while (str[i])
 		i++;
-	write (1, str, i);
+	write (1, str, i);*/
+	while (str[i])
+	{
+		ft_printf("%c", &str[i]);
+		i++;
+	}
 	return (i);
 }
