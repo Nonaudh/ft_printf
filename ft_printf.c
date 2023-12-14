@@ -72,8 +72,8 @@ int main ()
 
 	j = ft_printf("%s", tab);
 	printf("\n"); 
-	/*i = printf("%s", tab);
+	i = printf("%s", tab);
 	printf("\n");
     ft_printf("printf_len; %d\n", i);
-    ft_printf("ft_printf_len; %d\n", j);*/
+    ft_printf("ft_printf_len; %d\n", j);
 }

@@ -25,13 +25,8 @@ int	ft_print_string(char *str)
 	i = 0;
 	if (!str)
 		return (ft_print_string("(null)"));
-	/*while (str[i])
-		i++;
-	write (1, str, i);*/
 	while (str[i])
-	{
-		ft_printf("%c", &str[i]);
 		i++;
-	}
+	write (1, str, i);
 	return (i);
 }
