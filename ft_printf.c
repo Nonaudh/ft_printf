@@ -33,7 +33,6 @@ int	set_format(va_list args, char format)
 	return (ft_printf("%%%c", format));
 }
 
-
 int	ft_printf(const char *str, ...)
 {
 	int		i;
@@ -49,7 +48,6 @@ int	ft_printf(const char *str, ...)
 		{
 			i++;
 			printed_characters += set_format(args, str[i]);
-
 		}
 		else
 			printed_characters += ft_print_character(str[i]);
@@ -58,22 +56,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (printed_characters);
-}
-
-
-#include <stdio.h>
-#include "ft_printf.h"
-
-int main ()
-{
-	int j;
-	int i;
-	char *tab = "ceci est un test";
-
-	j = ft_printf("%s", tab);
-	printf("\n"); 
-	i = printf("%s", tab);
-	printf("\n");
-    ft_printf("printf_len; %d\n", i);
-    ft_printf("ft_printf_len; %d\n", j);
 }
